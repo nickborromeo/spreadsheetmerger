@@ -30,4 +30,11 @@ describe "User Authentication" do
       expect(page).to have_content("Invalid email or password")
     end
   end
+  
+  it "successful log out" do
+    user = FactoryGirl.create(:user)
+    sign_in_with(user.email, user.password)
+    click_link "Log Out"
+    expect(page).to have_content("Logged Out") 
+  end
 end
