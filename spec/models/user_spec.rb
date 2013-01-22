@@ -13,4 +13,8 @@ describe User do
   it "password cannot be too short" do
     FactoryGirl.build(:user, password: "123").should_not be_valid
   end
+  it "email needs to be unique" do
+    user = FactoryGirl.create(:user)
+    FactoryGirl.build(:user, email: user.email).should_not be_valid
+  end
 end

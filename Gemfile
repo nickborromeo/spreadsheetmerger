@@ -34,6 +34,10 @@ group :test do
 end
 
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'rb-fsevent', '~> 0.9.1'
+
+# Layout and Views
+gem "haml"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
