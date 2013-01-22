@@ -2,14 +2,20 @@ require 'spec_helper'
 
 describe "User Authentication" do
   context "successfully logged in" do
+    let(:user) { FactoryGirl.create(:user)}
+    
     it "with a valid existing email and password" do
-      user = FactoryGirl.create(:user)
-      visit new_session_path
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
+      sign_in_with(user.email, user.password)
+      expect(page).to have_content("Logged In")
+    end
+    
+    it "with remember me checked" do
+      fill_in_with(user.email, user.password)
+      check "Remember me"
       click_button "Sign In"
       expect(page).to have_content("Logged In")
     end
+    
   end
   
   context "invalid login" do
