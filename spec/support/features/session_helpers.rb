@@ -7,5 +7,12 @@ module Features
       fill_in 'user_password_confirmation', with: password
       click_button 'Sign Up'
     end
+    
+    def sign_in_with(email, password)
+      visit new_session_path
+      fill_in "Email", with: email
+      fill_in "Password", with: password
+      click_button "Sign In"
+    end
   end
 end

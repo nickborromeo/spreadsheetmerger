@@ -1,5 +1,5 @@
 Spreadsheetmerger::Application.routes.draw do
-  
+
   root :to => 'spreadsheet#index'
   
   get 'signup', to: 'users#new', as: 'signup'
@@ -7,6 +7,7 @@ Spreadsheetmerger::Application.routes.draw do
   #get 'logout', to: 'sessions#destroy', as: 'logout'
   
   resources :users
+  resources :sessions
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
