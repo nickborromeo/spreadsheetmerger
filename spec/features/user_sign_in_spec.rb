@@ -31,7 +31,7 @@ describe "User Authentication" do
     end
     it "when email and password do not match" do
       user = FactoryGirl.create(:user)
-      invalid_user = FactoryGirl.build(:user, password: "secretpassword")
+      invalid_user = FactoryGirl.build(:user, password: "secret")
       sign_in_with(user.email, invalid_user.password)
       expect(page).to have_content("Invalid email or password")
     end

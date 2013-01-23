@@ -37,4 +37,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
   
+  #Mail Macros
+  config.include(MailerMacros)
+  config.before(:each) { reset_email }
 end
