@@ -39,6 +39,8 @@ gem 'rb-fsevent', '~> 0.9.1'
 # Layout and Views
 gem "haml"
 
+# Spreadsheet upload
+gem "roo"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
