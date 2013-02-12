@@ -1,5 +1,7 @@
 Spreadsheetmerger::Application.routes.draw do
 
+  get "report/import"
+
   root :to => 'spreadsheet#index'
   
   get 'signup', to: 'users#new', as: 'signup'
@@ -7,6 +9,9 @@ Spreadsheetmerger::Application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   
   resources :users
+  resources :reports do 
+    collection {post :import}
+  end
   resources :sessions
   resources :password_resets
   
