@@ -1,1 +1,9 @@
 %h1 Upload Reports
+
+%section
+  =form_tag import_reports_path, multipart: true do
+    %div 
+      = file_field_tag :first_report
+    
+    %div
+      = submit_tag "Import"
