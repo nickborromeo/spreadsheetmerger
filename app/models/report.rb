@@ -2,8 +2,11 @@ class Report < ActiveRecord::Base
 
   belongs_to :user
 
+  # attr_accessor :headers, :report
+
   def self.import(file)
     report = open_report(file)
+    headers = report.row(1)
   end
 
   def self.open_report(file)
